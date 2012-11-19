@@ -7,7 +7,7 @@ var server  = http.createServer(function(req, res) {
   var pngStream;
   if (!pngStream) {
     pngStream = arDrone.createPngStream();
-    pngStream.on('error', function (err) {
+    pngStream.on('error', function(err) {
         console.error('pngStream ERROR: ' + err);
     });
   }
@@ -29,6 +29,6 @@ var server  = http.createServer(function(req, res) {
 });
 
 var port = 8080;
-server.listen(port, function () {
+server.listen(port, function() {
   console.log('Serving latest png on', port);
 });

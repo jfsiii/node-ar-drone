@@ -8,7 +8,7 @@ var maskFromNavdataOptions = maskingFunctions.maskFromNavdataOptions;
 var client = arDrone.createClient();
 
 // log all errors
-client.on('error', function (err) {
+client.on('error', function(err) {
   console.log('ERROR:', err);
 });
 
