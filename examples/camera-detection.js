@@ -18,17 +18,19 @@ client.config('general:navdata_demo', 'FALSE');
 // control the keys in the navdata
 var optionsMask = maskFromNavdataOptions(
   constants.options.DEMO,
-  constants.options.VISION_DETECT,
-  constants.options.EULER_ANGLES
+  constants.options.VISION_DETECT
 );
 client.config('general:navdata_options', optionsMask);
 
 // detect multiple tag types
-client.config('detect:detect_type', constants.CAD_TYPE.MULTIPLE_DETECTION_MODE);
+// client.config('detect:detect_type', constants.CAD_TYPE.MULTIPLE_DETECTION_MODE);
+
+// OR enable one tag type
+client.config('detect:detect_type', constants.CAD_TYPE.VISION);
 
 // look for oriented roundel underneath
-var vMask = TAG_TYPE_MASK(constants.TAG_TYPE.H_ORIENTED_ROUNDEL);
-client.config('detect:detections_select_v', vMask);
+// var vMask = TAG_TYPE_MASK(constants.TAG_TYPE.H_ORIENTED_ROUNDEL);
+// client.config('detect:detections_select_v', vMask);
 
 // look for a shell tag in front
 var hMask = TAG_TYPE_MASK(constants.TAG_TYPE.SHELL_TAG_V2);
